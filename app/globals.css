@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-ivory text-navy font-sans antialiased; font-size: 16px; line-height: 1.7; }
+  h1, h2, h3 { @apply font-display text-navy; letter-spacing: -0.01em; line-height: 1.12; }
+  h1 { @apply text-4xl sm:text-5xl lg:text-6xl font-medium; }
+  h2 { @apply text-3xl sm:text-4xl font-medium; }
+  h3 { @apply text-xl sm:text-2xl font-medium; }
+  a, button, summary, input, select, textarea { @apply outline-none; }
+  :focus-visible { outline: 3px solid #D3B08B; outline-offset: 3px; border-radius: 6px; }
+  summary::-webkit-details-marker { display: none; }
+  ::selection { background: #D3B08B; color: #1A2436; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-[1180px] px-5 sm:px-8; }
+  .section { @apply py-16 sm:py-24; }
+  .btn { @apply inline-flex min-h-[48px] items-center justify-center gap-3 rounded-full px-6 text-[15px] font-medium transition-colors duration-200; }
+  .btn-primary { @apply btn bg-navy text-white hover:bg-navy-deep; }
+  .btn-gold { @apply btn bg-gold text-navy-deep hover:bg-[#c99f76]; }
+  .btn-light { @apply btn bg-white text-navy hover:bg-ivory-sand; }
+  .btn-outline { @apply btn border border-navy/30 text-navy hover:bg-navy hover:text-white; }
+  .btn-outline-light { @apply btn border border-white/50 text-white hover:bg-white hover:text-navy; }
+  .card { @apply rounded-card bg-white shadow-card; }
+  .prose-simple p { @apply mb-4 max-w-[68ch]; }
+}
+
+/* =========================================================
+   APP SHELL — reserves space for the fixed sidebar rail so
+   page content never sits underneath it, and fades each
+   route in like a native app screen transition.
+========================================================= */
+.app-content {
+  animation: fade-up 0.45s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@layer base {
+  .dark body { @apply bg-[#0b0f17] text-white/90; }
+  .dark .card { @apply bg-[#131a26] shadow-none ring-1 ring-white/10; }
+  .dark h1, .dark h2, .dark h3 { @apply text-white; }
+  .dark .btn-light { @apply bg-white/10 text-white hover:bg-white/15; }
+  .dark .btn-outline { @apply border-white/20 text-white hover:bg-white hover:text-navy-deep; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
