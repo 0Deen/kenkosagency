@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, MessageCircle, ArrowUpRight } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  MessageCircle,
+  ArrowUpRight,
+} from "lucide-react";
 
 import { Icon } from "./Icon";
 import { Logo } from "./Navbar";
@@ -33,13 +39,13 @@ export function Footer() {
 
         <div className="container-x relative z-10 py-16 sm:py-20">
           <div className="grid gap-12 lg:grid-cols-[1.25fr_1fr_1fr_1fr_1.35fr]">
-
             {/* =====================================================
                 COMPANY
             ====================================================== */}
 
             <div>
-              <Logo light />
+              {/* FIX: Logo does not accept a "light" prop */}
+              <Logo />
 
               <p className="mt-6 max-w-sm text-[15px] leading-7 text-white/65">
                 A Kenyan travel, recruitment and logistics company helping
@@ -67,9 +73,7 @@ export function Footer() {
                         aria-label={`Kenkos on ${s.name}`}
                         className="group grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:bg-cyan-500 hover:text-white"
                       >
-                        <Icon
-                          name={socialIcon[s.name] ?? "Globe"}
-                        />
+                        <Icon name={socialIcon[s.name] ?? "Globe"} />
                       </a>
                     </li>
                   ))}
@@ -101,10 +105,7 @@ export function Footer() {
             ====================================================== */}
 
             {footerGroups.map((g) => (
-              <nav
-                key={g.title}
-                aria-label={g.title}
-              >
+              <nav key={g.title} aria-label={g.title}>
                 <h2 className="!font-sans !text-base !font-semibold !text-white">
                   {g.title}
                 </h2>
@@ -136,12 +137,11 @@ export function Footer() {
               </h2>
 
               <div className="mt-5 space-y-3">
-
                 {/* Phone */}
 
                 <a
                   href={contact.phoneHref}
-                  className="group flex items-start gap-3 rounded-2xl border border-transparent p-3 -mx-3 transition hover:border-white/10 hover:bg-white/5"
+                  className="-mx-3 group flex items-start gap-3 rounded-2xl border border-transparent p-3 transition hover:border-white/10 hover:bg-white/5"
                 >
                   <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-cyan-500/10 text-cyan-400 transition group-hover:bg-cyan-500 group-hover:text-white">
                     <Phone className="h-4 w-4" />
@@ -162,7 +162,7 @@ export function Footer() {
 
                 <a
                   href={contact.emailHref}
-                  className="group flex items-start gap-3 rounded-2xl border border-transparent p-3 -mx-3 transition hover:border-white/10 hover:bg-white/5"
+                  className="-mx-3 group flex items-start gap-3 rounded-2xl border border-transparent p-3 transition hover:border-white/10 hover:bg-white/5"
                 >
                   <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-cyan-500/10 text-cyan-400 transition group-hover:bg-cyan-500 group-hover:text-white">
                     <Mail className="h-4 w-4" />
@@ -181,7 +181,7 @@ export function Footer() {
 
                 {/* Address */}
 
-                <div className="flex items-start gap-3 rounded-2xl p-3 -mx-3">
+                <div className="-mx-3 flex items-start gap-3 rounded-2xl p-3">
                   <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-cyan-500/10 text-cyan-400">
                     <MapPin className="h-4 w-4" />
                   </span>
@@ -234,12 +234,10 @@ export function Footer() {
           ======================================================== */}
 
           <div className="mt-16 grid gap-6 border-t border-white/10 pt-12 lg:grid-cols-[1.1fr_0.9fr]">
-
             {/* Google Map */}
 
             <div className="overflow-hidden rounded-[28px] border border-white/10 bg-white/5 shadow-2xl">
               <div className="relative">
-
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8200211227613!2d36.81534807585854!3d-1.2817416356230111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d3a70a1df1%3A0xf8f6ef447bb70af9!2sRATTANSI%20EDUCATIONAL%20TRUST!5e0!3m2!1sen!2ske!4v1790076322366!5m2!1sen!2ske"
                   width="600"
@@ -270,11 +268,9 @@ export function Footer() {
             {/* Office card */}
 
             <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-white/10 to-white/[0.03] p-7 sm:p-9">
-
               <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-cyan-400/10 blur-3xl" />
 
               <div className="relative z-10">
-
                 <span className="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-300">
                   Visit Us
                 </span>
@@ -293,6 +289,7 @@ export function Footer() {
                 </p>
 
                 <div className="mt-7 space-y-4">
+                  {/* Find us */}
 
                   <div className="flex items-start gap-3">
                     <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-cyan-500/10 text-cyan-400">
@@ -309,6 +306,8 @@ export function Footer() {
                       </p>
                     </div>
                   </div>
+
+                  {/* Call */}
 
                   <div className="flex items-start gap-3">
                     <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-cyan-500/10 text-cyan-400">
@@ -329,6 +328,8 @@ export function Footer() {
                     </div>
                   </div>
 
+                  {/* Email */}
+
                   <div className="flex items-start gap-3">
                     <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-cyan-500/10 text-cyan-400">
                       <Mail className="h-4 w-4" />
@@ -348,6 +349,8 @@ export function Footer() {
                     </div>
                   </div>
                 </div>
+
+                {/* Buttons */}
 
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
@@ -381,7 +384,6 @@ export function Footer() {
 
         <div className="relative z-10 border-t border-white/10">
           <div className="container-x flex flex-wrap items-center justify-between gap-4 py-6 text-sm">
-
             <p className="text-white/45">
               &copy; {new Date().getFullYear()} {contact.company}. All
               rights reserved.
@@ -404,9 +406,7 @@ export function Footer() {
 
               <span className="hidden h-4 w-px bg-white/10 sm:block" />
 
-              <span className="text-white/30">
-                Kenya
-              </span>
+              <span className="text-white/30">Kenya</span>
             </div>
           </div>
         </div>
