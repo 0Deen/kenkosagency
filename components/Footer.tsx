@@ -1,3 +1,4 @@
+```tsx
 import Link from "next/link";
 import {
   MapPin,
@@ -23,6 +24,7 @@ export function Footer() {
   return (
     <>
       <footer className="relative overflow-hidden bg-navy-deep text-ivory-sand">
+
         {/* =========================================================
             DECORATIVE BACKGROUND
         ========================================================== */}
@@ -38,13 +40,14 @@ export function Footer() {
         ========================================================== */}
 
         <div className="container-x relative z-10 py-16 sm:py-20">
+
           <div className="grid gap-12 lg:grid-cols-[1.25fr_1fr_1fr_1fr_1.35fr]">
+
             {/* =====================================================
                 COMPANY
             ====================================================== */}
 
             <div>
-              {/* FIX: Logo does not accept a "light" prop */}
               <Logo />
 
               <p className="mt-6 max-w-sm text-[15px] leading-7 text-white/65">
@@ -73,7 +76,9 @@ export function Footer() {
                         aria-label={`Kenkos on ${s.name}`}
                         className="group grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:bg-cyan-500 hover:text-white"
                       >
-                        <Icon name={socialIcon[s.name] ?? "Globe"} />
+                        <Icon
+                          name={socialIcon[s.name] ?? "Globe"}
+                        />
                       </a>
                     </li>
                   ))}
@@ -105,7 +110,10 @@ export function Footer() {
             ====================================================== */}
 
             {footerGroups.map((g) => (
-              <nav key={g.title} aria-label={g.title}>
+              <nav
+                key={g.title}
+                aria-label={g.title}
+              >
                 <h2 className="!font-sans !text-base !font-semibold !text-white">
                   {g.title}
                 </h2>
@@ -137,6 +145,7 @@ export function Footer() {
               </h2>
 
               <div className="mt-5 space-y-3">
+
                 {/* Phone */}
 
                 <a
@@ -234,10 +243,12 @@ export function Footer() {
           ======================================================== */}
 
           <div className="mt-16 grid gap-6 border-t border-white/10 pt-12 lg:grid-cols-[1.1fr_0.9fr]">
+
             {/* Google Map */}
 
             <div className="overflow-hidden rounded-[28px] border border-white/10 bg-white/5 shadow-2xl">
               <div className="relative">
+
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8200211227613!2d36.81534807585854!3d-1.2817416356230111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d3a70a1df1%3A0xf8f6ef447bb70af9!2sRATTANSI%20EDUCATIONAL%20TRUST!5e0!3m2!1sen!2ske!4v1790076322366!5m2!1sen!2ske"
                   width="600"
@@ -268,9 +279,11 @@ export function Footer() {
             {/* Office card */}
 
             <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-white/10 to-white/[0.03] p-7 sm:p-9">
+
               <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-cyan-400/10 blur-3xl" />
 
               <div className="relative z-10">
+
                 <span className="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-300">
                   Visit Us
                 </span>
@@ -289,6 +302,7 @@ export function Footer() {
                 </p>
 
                 <div className="mt-7 space-y-4">
+
                   {/* Find us */}
 
                   <div className="flex items-start gap-3">
@@ -353,6 +367,7 @@ export function Footer() {
                 {/* Buttons */}
 
                 <div className="mt-8 flex flex-wrap gap-3">
+
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-1 hover:bg-cyan-400"
@@ -372,10 +387,70 @@ export function Footer() {
                     <MessageCircle className="h-4 w-4" />
                     WhatsApp
                   </a>
+
                 </div>
               </div>
             </div>
           </div>
+
+          {/* =======================================================
+              DEEN DEVELOPER CREDIT
+          ======================================================== */}
+
+          <div className="mt-14 flex justify-center">
+
+            <a
+              href="https://wa.me/254719760996?text=Hello%20Deen%2C%20I%20found%20your%20work%20on%20the%20Kenkos%20website%20and%20I%27m%20interested%20in%20a%20website%2C%20company%20system%20or%20AI%20solution."
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contact Deen for website and digital development"
+              className="group relative flex w-full max-w-2xl items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-4 shadow-xl shadow-black/10 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#25D366]/30 hover:bg-white/[0.06]"
+            >
+
+              {/* Glow */}
+
+              <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#25D366]/10 blur-3xl transition duration-500 group-hover:bg-[#25D366]/20" />
+
+              {/* WhatsApp icon */}
+
+              <div className="relative grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#25D366]/10 text-[#25D366] ring-1 ring-[#25D366]/20 transition duration-300 group-hover:bg-[#25D366] group-hover:text-white">
+                <MessageCircle className="h-6 w-6" />
+              </div>
+
+              {/* Developer information */}
+
+              <div className="relative min-w-0 flex-1">
+
+                <p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-white/30">
+                  Digital Experience
+                </p>
+
+                <p className="mt-1 text-sm font-semibold text-white">
+                  Website crafted by Deen
+                </p>
+
+                <p className="mt-1 text-xs leading-5 text-white/45">
+                  Need a website, company system or AI solution like this?
+                  Let&apos;s build yours.
+                </p>
+
+              </div>
+
+              {/* Desktop CTA */}
+
+              <div className="relative hidden shrink-0 items-center gap-2 rounded-full bg-[#25D366]/10 px-4 py-2 text-xs font-semibold text-[#25D366] transition duration-300 group-hover:bg-[#25D366] group-hover:text-white sm:flex">
+
+                <MessageCircle className="h-4 w-4" />
+
+                <span>Chat with Deen</span>
+
+                <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+
+              </div>
+
+            </a>
+          </div>
+
         </div>
 
         {/* =========================================================
@@ -383,13 +458,16 @@ export function Footer() {
         ========================================================== */}
 
         <div className="relative z-10 border-t border-white/10">
+
           <div className="container-x flex flex-wrap items-center justify-between gap-4 py-6 text-sm">
+
             <p className="text-white/45">
               &copy; {new Date().getFullYear()} {contact.company}. All
               rights reserved.
             </p>
 
             <div className="flex flex-wrap items-center gap-5">
+
               <Link
                 href="/privacy"
                 className="text-white/45 transition hover:text-cyan-300"
@@ -406,10 +484,14 @@ export function Footer() {
 
               <span className="hidden h-4 w-px bg-white/10 sm:block" />
 
-              <span className="text-white/30">Kenya</span>
+              <span className="text-white/30">
+                Kenya
+              </span>
+
             </div>
           </div>
         </div>
+
       </footer>
 
       {/* ===========================================================
@@ -425,6 +507,7 @@ export function Footer() {
         aria-label="Chat with Kenkos on WhatsApp"
         className="group fixed bottom-5 right-5 z-[100] flex items-center gap-3 rounded-full border border-white/20 bg-cyan-500 px-4 py-3 text-white shadow-[0_15px_40px_rgba(8,145,178,0.35)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-cyan-400 sm:bottom-7 sm:right-7"
       >
+
         {/* Pulse */}
 
         <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-cyan-400/30" />
@@ -442,7 +525,9 @@ export function Footer() {
             WhatsApp
           </span>
         </span>
+
       </a>
     </>
   );
 }
+```
